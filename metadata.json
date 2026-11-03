@@ -1,0 +1,6 @@
+{
+  "name": "Dara & Sothea • Wedding Invitation & Gallery",
+  "description": "An elegant bilingual Khmer and English wedding invitation app with interactive arch-frame gallery, live countdown, RSVP, ceremony timeline, and guest blessings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

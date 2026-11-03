@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #295744;
+    --color-primary-soft: #3c735b;
+    --color-primary-dark: #1b3b2e;
+    --color-gold: #c5a880;
+    --color-gold-bright: #d4af37;
+    --color-gold-light: #f5eedb;
+    --color-petals: #e8b2b5;
+    --color-cornflower: #9bb4c7;
+    --color-bg-light: #f7f5f0;
+    --color-bg-dark: #161d19;
+    --color-card-light: #fcfbf7;
+    --color-card-dark: #1e2722;
+    --color-arch-light: #fff8ed;
+    --color-arch-dark: #26322b;
+    --color-badge-light: #f5dfd0;
+    --color-badge-dark: #473428;
+  }
+}
+
+/* Custom Font Families */
+.font-display {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+
+.font-script {
+  font-family: 'Alex Brush', cursive;
+}
+
+.font-khmer {
+  font-family: 'Noto Sans Khmer', 'Kantumruy Pro', sans-serif;
+}
+
+.font-noto-khmer {
+  font-family: 'Noto Sans Khmer', sans-serif;
+}
+
+.font-garamond {
+  font-family: 'EB Garamond', serif;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-modern {
+  font-family: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
+}
+
+/* Material Symbols Styling */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.material-symbols-outlined.fill-1 {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Arch Frame geometry matching the wedding invitation design */
+.arch-frame {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.arch-invitation {
+  border-top-left-radius: 140px;
+  border-top-right-radius: 140px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* Floral Radial Glow Backdrop */
+.floral-bg-svg {
+  background-image: 
+    radial-gradient(circle at 10% 8%, rgba(155, 180, 199, 0.22) 0%, transparent 40%),
+    radial-gradient(circle at 90% 12%, rgba(232, 178, 181, 0.26) 0%, transparent 45%),
+    radial-gradient(circle at 95% 85%, rgba(155, 180, 199, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 5% 92%, rgba(232, 178, 181, 0.24) 0%, transparent 40%);
+}
+
+/* Sheen sweep animation */
+@keyframes sheenSweep {
+  0% { transform: translateX(-100%) rotate(25deg); opacity: 0; }
+  50% { opacity: 0.15; }
+  100% { transform: translateX(200%) rotate(25deg); opacity: 0; }
+}
+
+.sheen-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen-sweep::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: sheenSweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Soundwave keyframe animation for melody player */
+@keyframes soundwaveAnim {
+  0%, 100% { height: 4px; }
+  50% { height: 14px; }
+}
+
+.animate-soundwave-1 {
+  animation: soundwaveAnim 0.8s ease-in-out infinite;
+}
+.animate-soundwave-2 {
+  animation: soundwaveAnim 0.6s ease-in-out 0.2s infinite;
+}
+.animate-soundwave-3 {
+  animation: soundwaveAnim 0.7s ease-in-out 0.4s infinite;
+}
+
+/* Falling flower petals animation */
+@keyframes petalFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(40px);
+    opacity: 0;
+  }
+}
+
+.petal-item {
+  position: fixed;
+  top: -20px;
+  pointer-events: none;
+  border-radius: 60% 0 60% 0;
+  animation: petalFall linear infinite;
+  z-index: 25;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
